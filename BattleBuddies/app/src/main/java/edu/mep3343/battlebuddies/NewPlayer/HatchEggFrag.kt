@@ -68,16 +68,15 @@ class HatchEggFrag: Fragment() {
             theEgg!!.setImageResource(R.drawable.egg_4_nobg)
             currentEggPhase = 4
         }  else if (currentEggPhase == 4) {
-            tapsToHatch = random.nextInt(20, 50)
+            tapsToHatch = random.nextInt(15, 40)
             theEgg!!.setImageResource(R.drawable.egg_5_nobg)
             currentEggPhase = 5
         }  else if (currentEggPhase == 5) {
-            tapsToHatch = random.nextInt(25, 50)
-            theEgg!!.setImageResource(R.drawable.egg_6_nobg)
-            currentEggPhase = 6
-        }  else if (currentEggPhase == 6) {
             theEgg!!.isClickable=false
             hatchEgg()
+        }  else{
+            //SHOULD NEVER REACH HERE
+            activity?.finish()
         }
     }
 

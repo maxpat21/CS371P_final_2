@@ -1065,6 +1065,11 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bb_1
+drawable bb_2
+drawable bb_3
+drawable bb_4
+drawable bb_5
 drawable common_full_open_on_phone
 drawable common_google_signin_btn_icon_dark
 drawable common_google_signin_btn_icon_dark_focused
@@ -1137,6 +1142,7 @@ drawable shape_window_dim
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
+id BB_name
 id CTRL
 id FUNCTION
 id META
@@ -1174,6 +1180,8 @@ id async
 id auto
 id background_frame
 id barrier
+id battle_but
+id bb_namer
 id beginning
 id blocking
 id bottom
@@ -1206,6 +1214,7 @@ id confirmation_code_layout
 id container
 id content
 id contentPanel
+id continue_but
 id coordinator
 id country_list
 id cross_device_linking_body
@@ -1240,6 +1249,7 @@ id enter_name
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id feed_but
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1271,6 +1281,7 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id leaderboard_but
 id left
 id light
 id line1
@@ -1288,6 +1299,7 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id my_BattleBuddy
 id name
 id name_layout
 id navigation_header_container
@@ -1311,6 +1323,8 @@ id phone_layout
 id phone_number
 id pin
 id popup_box
+id power_stat
+id power_text
 id progress_circular
 id progress_horizontal
 id radio
@@ -1355,6 +1369,10 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id spawned_BB
+id spawner_title
+id speed_stat
+id speed_text
 id split_action_bar
 id spread
 id spread_inside
@@ -1482,6 +1500,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_hatch
+layout fragment_home
 layout fragment_name
 layout fragment_spawner
 layout fui_activity_invisible

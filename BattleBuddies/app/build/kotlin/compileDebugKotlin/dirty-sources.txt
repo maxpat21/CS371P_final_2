@@ -1,5 +1,0 @@
-C:\cygwin64\home\maxpa\CS371M\CS371P_final_2\BattleBuddies\app\src\main\java\edu\mep3343\battlebuddies\Auth.kt
-C:\cygwin64\home\maxpa\CS371M\CS371P_final_2\BattleBuddies\app\src\main\java\edu\mep3343\battlebuddies\MainActivity.kt
-C:\cygwin64\home\maxpa\CS371M\CS371P_final_2\BattleBuddies\app\src\main\java\edu\mep3343\battlebuddies\NewPlayer\ChooseNameFrag.kt
-C:\cygwin64\home\maxpa\CS371M\CS371P_final_2\BattleBuddies\app\src\main\java\edu\mep3343\battlebuddies\NewPlayer\HatchEggFrag.kt
-C:\cygwin64\home\maxpa\CS371M\CS371P_final_2\BattleBuddies\app\src\main\java\edu\mep3343\battlebuddies\NewPlayer\SpawnBBFrag.kt

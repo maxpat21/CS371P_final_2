@@ -80,6 +80,10 @@
         "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\c1bdf704990e457939d92af3ca9b59f6\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
+        "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bb_5.png.flat",
+        "source": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\src\\main\\res\\drawable\\bb_5.png"
+    },
+    {
         "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_header.xml.flat",
         "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\b2869cfb54b6c62249691e80e7f3958a\\material-1.0.0\\res\\layout\\design_navigation_item_header.xml"
     },
@@ -178,6 +182,10 @@
     {
         "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\c1bdf704990e457939d92af3ca9b59f6\\appcompat-1.0.2\\res\\drawable-hdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bb_3.png.flat",
+        "source": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\src\\main\\res\\drawable\\bb_3.png"
     },
     {
         "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -286,6 +294,10 @@
     {
         "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_tab_indicator_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\c1bdf704990e457939d92af3ca9b59f6\\appcompat-1.0.2\\res\\drawable-xhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bb_1.png.flat",
+        "source": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\src\\main\\res\\drawable\\bb_1.png"
     },
     {
         "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_text_btn_text_color_selector.xml.flat",
@@ -900,6 +912,14 @@
         "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\b2869cfb54b6c62249691e80e7f3958a\\material-1.0.0\\res\\animator\\mtrl_fab_show_motion_spec.xml"
     },
     {
+        "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bb_4.png.flat",
+        "source": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\src\\main\\res\\drawable\\bb_4.png"
+    },
+    {
         "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\c1bdf704990e457939d92af3ca9b59f6\\appcompat-1.0.2\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
@@ -1390,6 +1410,10 @@
     {
         "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
         "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\c1bdf704990e457939d92af3ca9b59f6\\appcompat-1.0.2\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bb_2.png.flat",
+        "source": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\src\\main\\res\\drawable\\bb_2.png"
     },
     {
         "merged": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
