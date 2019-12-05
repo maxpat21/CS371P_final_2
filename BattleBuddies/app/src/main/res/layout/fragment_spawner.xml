@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spawner_title"
+        android:gravity="center"
+        android:textSize="16dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/spawned_BB"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center"
+        android:layout_marginTop="75dp"
+        />
+    <EditText
+        android:id="@+id/bb_namer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="Enter name here"
+        />
+
+    <Button
+        android:id="@+id/continue_but"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Continue"
+        android:textSize="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        />
+
+</LinearLayout>

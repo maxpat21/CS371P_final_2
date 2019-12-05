@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:text="Please enter an account name \n(cannot be changed later)"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-condensed"
+    />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <EditText
+            android:id="@+id/enter_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:textSize="15dp"
+            android:fontFamily="sans-serif-condensed"
+            android:hint="Enter name here"
+            />
+        <Button
+            android:id="@+id/submit_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:fontFamily="sans-serif-condensed"
+            android:text="submit"
+            android:textSize="15dp"
+            android:layout_marginRight="15dp"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

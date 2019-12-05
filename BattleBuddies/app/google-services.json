@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "741433663591",
+    "firebase_url": "https://battle-buddies-36604.firebaseio.com",
+    "project_id": "battle-buddies-36604",
+    "storage_bucket": "battle-buddies-36604.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:741433663591:android:419a4621204d4ec49334c2",
+        "android_client_info": {
+          "package_name": "edu.mep3343.battlebuddies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "741433663591-v5fjgqgogs0g907uvgnkboesntgqqbgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.mep3343.battlebuddies",
+            "certificate_hash": "d0685745434f5f704e671cc8f98679042ad45707"
+          }
+        },
+        {
+          "client_id": "741433663591-7c2cj5omrnmakvo93j4on3mkj6ueltd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaG5lXTl7o8c_ohDe-q6EnnPegVHdhRdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "741433663591-7c2cj5omrnmakvo93j4on3mkj6ueltd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
