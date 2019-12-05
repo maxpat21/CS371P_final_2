@@ -21,6 +21,18 @@ class Auth(private val activity: MainActivity) {
         user = FirebaseAuth.getInstance().currentUser
         FirebaseAuth.AuthStateListener {
             user = FirebaseAuth.getInstance().currentUser
+            if (user == null) {
+                // Create and launch sign-in intent
+                activity.startActivityForResult(
+                    AuthUI.getInstance()
+                        .createSignInIntentBuilder()
+                        // Was creating problems
+                        .setIsSmartLockEnabled(false)
+                        .setAvailableProviders(providers)
+                        .build(),
+                    rcSignIn
+                )
+            }
         }
         if (user == null) {
             // Create and launch sign-in intent

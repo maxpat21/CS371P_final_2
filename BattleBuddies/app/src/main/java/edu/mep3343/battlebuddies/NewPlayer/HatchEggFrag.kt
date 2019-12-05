@@ -52,23 +52,23 @@ class HatchEggFrag: Fragment() {
         val random = Random(3)
         currentTaps = 0
         if (currentEggPhase == null) {
-            tapsToHatch = random.nextInt(1, 10)
+            tapsToHatch = random.nextInt(1, 5)
             theEgg!!.setImageResource(R.drawable.egg_1_nobg)
             currentEggPhase = 1
         } else if (currentEggPhase == 1) {
-            tapsToHatch = random.nextInt(5, 20)
+            tapsToHatch = random.nextInt(1, 10)
             theEgg!!.setImageResource(R.drawable.egg_2_nobg)
             currentEggPhase = 2
         } else if (currentEggPhase == 2) {
-            tapsToHatch = random.nextInt(10, 30)
+            tapsToHatch = random.nextInt(5, 15)
             theEgg!!.setImageResource(R.drawable.egg_3_nobg)
             currentEggPhase = 3
         }  else if (currentEggPhase == 3) {
-            tapsToHatch = random.nextInt(15, 40)
+            tapsToHatch = random.nextInt(5, 20)
             theEgg!!.setImageResource(R.drawable.egg_4_nobg)
             currentEggPhase = 4
         }  else if (currentEggPhase == 4) {
-            tapsToHatch = random.nextInt(15, 40)
+            tapsToHatch = random.nextInt(10, 20)
             theEgg!!.setImageResource(R.drawable.egg_5_nobg)
             currentEggPhase = 5
         }  else if (currentEggPhase == 5) {

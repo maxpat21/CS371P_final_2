@@ -9,10 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.FragmentTransaction
+import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 import edu.mep3343.battlebuddies.NewPlayer.ChooseNameFrag
+import edu.mep3343.battlebuddies.NewPlayer.HatchEggFrag
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -20,23 +23,52 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var authAccount: Auth
     private lateinit var chooseNameFrag: ChooseNameFrag
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
+        db = FirebaseFirestore.getInstance()
         authAccount = Auth(this)
         val user = FirebaseAuth.getInstance().currentUser
         if(user == null)
             Log.d("BAD", "BAAAAAAAAAAAAAAAAAAAAD")
         else {
             Log.d("NOT NULL ", "USER IS STILL LOGGED IN")
-            newPlayer(user)
+            if(user.displayName == null)
+                newPlayer()
+            else {
+                val userName = user.displayName
+                val docRef = db.collection("battleBuddies").document(userName!!)
+                docRef.get()
+                    .addOnSuccessListener { document ->
+                        if (!document.exists()) {
+                            val hatchFrag = HatchEggFrag.newInstance()
+                            supportFragmentManager
+                                .beginTransaction()
+                                .replace(R.id.main_frame, hatchFrag)
+                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                                .commit()
+                        }
+                        else{
+                            val playFrag = HomeFragment.newInstance()
+                            supportFragmentManager
+                                .beginTransaction()
+                                .replace(R.id.main_frame, playFrag)
+                                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                                .commit()
+                        }
+                    }
+                    .addOnFailureListener{ e ->
+                            Log.w("MainActivity", "Error reading db", e)
+                            this.finish()
+                    }
+            }
         }
     }
 
-    fun newPlayer(user: FirebaseUser){
+    private fun newPlayer(){
         chooseNameFrag = ChooseNameFrag.newInstance()
         supportFragmentManager
             .beginTransaction()
@@ -49,13 +81,38 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == Auth.rcSignIn) {
             val response = IdpResponse.fromResultIntent(data)
-
-            Log.d(javaClass.simpleName, "activity result $resultCode")
             if (resultCode == Activity.RESULT_OK) {
                 val user = FirebaseAuth.getInstance().currentUser
                 if(user != null) {
                     if(user.displayName == null)
-                        newPlayer(user)
+                        newPlayer()
+                    else {
+                        val userName = user.displayName
+                        val docRef = db.collection("battleBuddies").document(userName!!)
+                        docRef.get()
+                            .addOnSuccessListener { document ->
+                                if (!document.exists()) {
+                                    val hatchFrag = HatchEggFrag.newInstance()
+                                    supportFragmentManager
+                                        .beginTransaction()
+                                        .replace(R.id.main_frame, hatchFrag)
+                                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                                        .commit()
+                                }
+                                else{
+                                    val playFrag = HomeFragment.newInstance()
+                                    supportFragmentManager
+                                        .beginTransaction()
+                                        .replace(R.id.main_frame, playFrag)
+                                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                                        .commit()
+                                }
+                            }
+                            .addOnFailureListener{ e ->
+                                Log.w("MainActivity", "Error reading db", e)
+                                this.finish()
+                            }
+                    }
                 }
             } else {
                 Log.d("main", "login failed")
@@ -77,9 +134,21 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+        val id = item.itemId
+        if (id == R.id.sign_out) {
+            AuthUI.getInstance().signOut(this)
+                .addOnCompleteListener{
+                    this.startActivityForResult(
+                        AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            // Was creating problems
+                            .setIsSmartLockEnabled(false)
+                            .setAvailableProviders(Auth.providers)
+                            .build(),
+                        Auth.rcSignIn
+                    )
+                }
         }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -17,20 +17,24 @@
         android:layout_marginTop="15dp"
         />
 
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/leaderboard_but"
+        android:src="@drawable/ic_trophy"
+        android:scaleType="fitCenter"
         app:layout_constraintTop_toBottomOf="@+id/BB_name"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="15dp"
         android:layout_marginStart="40dp"
         />
 
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:id="@+id/battle_but"
+        android:src="@drawable/ic_swords"
+        android:scaleType="fitCenter"
         app:layout_constraintTop_toBottomOf="@+id/BB_name"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="15dp"

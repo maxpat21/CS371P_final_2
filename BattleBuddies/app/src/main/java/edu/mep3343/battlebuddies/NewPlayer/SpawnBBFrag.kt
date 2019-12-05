@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.fragment_name.*
 import kotlin.random.Random
 import edu.mep3343.battlebuddies.BattleBuddy
+import edu.mep3343.battlebuddies.HomeFragment
 
 class SpawnBBFrag: Fragment() {
 
@@ -82,9 +83,12 @@ class SpawnBBFrag: Fragment() {
                     .addOnSuccessListener {
                         Log.d("SpawnFrag", "DocumentSnapshot successfully written!")
                         //READY TO GO TO HOME FRAGMENT
+
+
                         val homeFrag = HomeFragment.newInstance()
                         fragmentManager
                             ?.beginTransaction()
+                            ?.remove(this)
                             ?.replace(R.id.main_frame, homeFrag)
                             ?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                             ?.commit()

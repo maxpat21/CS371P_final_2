@@ -10,6 +10,7 @@
         android:gravity="center"
         android:textSize="20dp"
         android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="15dp"
         />
 
     <ImageView
@@ -18,7 +19,6 @@
         android:id="@+id/spawned_BB"
         android:scaleType="fitCenter"
         android:layout_gravity="center"
-        android:layout_marginTop="75dp"
         />
     <EditText
         android:id="@+id/bb_namer"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed"
         android:text="Continue"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         />

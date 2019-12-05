@@ -7,4 +7,10 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/sign_out"
+        android:title="Sign Out"
+        android:orderInCategory="101"
+        app:showAsAction="never"
+        />
 </menu>

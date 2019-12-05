@@ -1123,6 +1123,8 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_swords
+drawable ic_trophy
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1363,6 +1365,7 @@ id showHome
 id showTitle
 id sign_in_email_sent_header_text
 id sign_in_email_sent_text
+id sign_out
 id smallLabel
 id snackbar_action
 id snackbar_text
