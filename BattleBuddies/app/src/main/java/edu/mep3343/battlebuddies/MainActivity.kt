@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             Log.d("BAD", "BAAAAAAAAAAAAAAAAAAAAD")
         else {
             Log.d("NOT NULL ", "USER IS STILL LOGGED IN")
-            if(user.displayName == null)
+            if(user.displayName == null || user.displayName == "")
                 newPlayer()
             else {
                 val userName = user.displayName

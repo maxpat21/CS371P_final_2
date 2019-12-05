@@ -77,7 +77,7 @@ class SpawnBBFrag: Fragment() {
             else{
                 Toast.makeText(activity, "Success!", Toast.LENGTH_SHORT).show()
                 val ownerName = user!!.displayName.toString()
-                val bbCreated = BattleBuddy(ownerName, bbName!!, bbType, 0, 0)
+                val bbCreated = BattleBuddy(ownerName, bbName!!, bbType, 0, 0, 0, 1, null)
                 db.collection("battleBuddies").document(ownerName)
                     .set(bbCreated)
                     .addOnSuccessListener {
