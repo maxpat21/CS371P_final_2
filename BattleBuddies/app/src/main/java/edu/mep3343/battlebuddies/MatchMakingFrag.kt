@@ -103,13 +103,20 @@ class MatchMakingFrag: Fragment() {
                 if(playerCount == 2){
                     waitingText.text = "2 players in lobby! can start battle!"
                     val otherPlayerName = theData!!["player_2"].toString()
-                    val battleFrag = BattleFrag.newInstance(userName, otherPlayerName)
-                    fragmentManager
-                        ?.beginTransaction()
-                        ?.remove(this)
-                        ?.replace(R.id.main_frame, battleFrag)
-                        ?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                        ?.commit()
+                    Log.d("STARTING BATTLE FRAG", "PLAYER 2 NAME IS " + otherPlayerName)
+                    if(otherPlayerName != null && otherPlayerName != "") {
+                        waitingText.text = "Other player is " + otherPlayerName
+                        val battleFrag = BattleFrag.newInstance(userName, otherPlayerName)
+                        fragmentManager
+                            ?.beginTransaction()
+                            ?.remove(this)
+                            ?.replace(R.id.main_frame, battleFrag)
+                            ?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                            ?.commit()
+                    }
+                    else{
+                        waitingText.text = "other player is null"
+                    }
                 }
             }
         }

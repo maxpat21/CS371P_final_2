@@ -1,5 +1,6 @@
 package edu.mep3343.battlebuddies
 
+import android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -25,14 +26,19 @@ import kotlin.random.Random
 import edu.mep3343.battlebuddies.BattleBuddy
 import edu.mep3343.battlebuddies.NewPlayer.SpawnBBFrag
 import java.util.*
+import android.animation.TimeAnimator
 
 class BattleFrag(user1: String, user2: String): Fragment() {
 
+    var lastTimeUpdated = 0.toLong()
+    private var whichPlayer: Int = 0
     private lateinit var db: FirebaseFirestore
     private var player1Name = user1
     private var player2Name = user2
     private var health1: Int = 100
-    private var health2: int = 100
+    private var health2: Int = 100
+    private var mySpeed: Int = 0
+    private var myPower: Int = 0
     private lateinit var HP1: TextView
     private lateinit var HP2: TextView
     private lateinit var DMG1: TextView
@@ -46,11 +52,12 @@ class BattleFrag(user1: String, user2: String): Fragment() {
         }
     }
 
-    initViews(root:View){
+    private fun initViews(root:View){
         loadBB1(root)
+        loadBB2(root)
     }
 
-    loadBB1(root: View){
+    private fun loadBB1(root: View){
         val BB_1_owner = root.findViewById<TextView>(R.id.owner_1)
         val BB_1_name = root.findViewById<TextView>(R.id.BB_name_1)
         val BB_1_speed = root.findViewById<TextView>(R.id.speed_1)
@@ -62,6 +69,7 @@ class BattleFrag(user1: String, user2: String): Fragment() {
                 if(document.exists()) {
                     val myBB = document.toObject(BattleBuddy::class.java)
                     BB_1_name.text = myBB!!.name
+                    BB_1_owner.text = myBB!!.owner
                     val whatType = myBB!!.type
                     if (whatType == "Party Boy")
                         BB1.setImageResource(R.drawable.bb_1)
@@ -74,8 +82,12 @@ class BattleFrag(user1: String, user2: String): Fragment() {
                     else if (whatType == "Angry Man")
                         BB1.setImageResource(R.drawable.bb_4)
 
-                    BB_1_Speed.text = myBB.Speed.toString()
-                    BB_1_Power.text = myBB.Power.toString()
+                    BB_1_speed.text = myBB.Speed.toString()
+                    BB_1_power.text = myBB.Power.toString()
+                    if(whichPlayer == 1){
+                        mySpeed = myBB.Speed!!
+                        myPower = myBB.Power!!
+                    }
                 }
                 else{
                     Log.d("In Battle Frag", "BIG PROBLEM, SOMEHOW IN HOME FRAG BUT THERE IS NO BATTLE BUDDY FOR THIS USER")
@@ -83,8 +95,122 @@ class BattleFrag(user1: String, user2: String): Fragment() {
             }
     }
 
+    private fun loadBB2(root: View){
+        val BB_2_owner = root.findViewById<TextView>(R.id.owner_2)
+        val BB_2_name = root.findViewById<TextView>(R.id.BB_name_2)
+        val BB_2_speed = root.findViewById<TextView>(R.id.speed_2)
+        val BB_2_power = root.findViewById<TextView>(R.id.power_2)
+        val BB2 = root.findViewById<ImageView>(R.id.BB_2)
+        if(player2Name == null)
+            return
+        val docRef = db.collection("battleBuddies").document(player2Name)
+        docRef.get()
+            .addOnSuccessListener { document->
+                if(document.exists()) {
+                    val myBB = document.toObject(BattleBuddy::class.java)
+                    BB_2_name.text = myBB!!.name
+                    BB_2_owner.text = myBB!!.owner
+                    val whatType = myBB!!.type
+                    if (whatType == "Party Boy")
+                        BB2.setImageResource(R.drawable.bb_1)
+                    else if (whatType == "Hopper")
+                        BB2.setImageResource(R.drawable.bb_3)
+                    else if (whatType == "Sad Boy")
+                        BB2.setImageResource(R.drawable.bb_2)
+                    else if (whatType == "Lover")
+                        BB2.setImageResource(R.drawable.bb_5)
+                    else if (whatType == "Angry Man")
+                        BB2.setImageResource(R.drawable.bb_4)
 
-}
+                    BB_2_speed.text = myBB.Speed.toString()
+                    BB_2_power.text = myBB.Power.toString()
+                    if(whichPlayer == 2){
+                        mySpeed = myBB.Speed!!
+                        myPower = myBB.Power!!
+                    }
+                }
+                else{
+                    Log.d("In Battle Frag", "BIG PROBLEM, SOMEHOW IN HOME FRAG BUT THERE IS NO BATTLE BUDDY FOR THIS USER")
+                }
+            }
+    }
+
+    private fun initData(){
+        val initData = hashMapOf(
+            "HP1" to 100,
+            "HP2" to 100,
+            "lastPlayer" to "",
+            "lastMove" to 0
+        )
+        val docRef = db.collection("battles").document("battle1")
+        docRef.get().addOnSuccessListener { document->
+            if(document.data == null)
+                docRef.set(initData)
+        }
+    }
+
+    private fun initListener(){
+        val docRef = db.collection("battles").document("battle1")
+        docRef.addSnapshotListener{ snapshot, _ ->
+            if(snapshot != null && snapshot.exists()){
+                val theData = snapshot.data
+                var newHP1 = theData!!["HP1"].toString()
+                var newHP2 = theData!!["HP2"].toString()
+                var playerMove = theData!!["lastPlayer"].toString()
+                var dmgDealt = theData!!["lastMove"].toString()
+                HP1.text = newHP1
+                HP2.text = newHP2
+                if(playerMove == player1Name){
+                    DMG1.text = dmgDealt
+                    DMG2.text = ""
+                }
+                else if(playerMove == player2Name){
+                    DMG2.text = dmgDealt
+                    DMG1.text = ""
+                }
+                if(newHP1.toInt() == 0)
+                    gameOver(player2Name)
+                else if(newHP2.toInt() == 0)
+                    gameOver(player1Name)
+            }
+        }
+    }
+
+    private fun gameOver(winner: String){
+        Toast.makeText(activity, "Game over! Winner is " + winner, Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun startGame(){
+        var timeToUpdate = (3000 - (mySpeed * 50)).toLong()
+        var myTimeAnimator = TimeAnimator()
+        myTimeAnimator.setTimeListener{ animation, totalTime, deltaTime ->
+            var curTime = totalTime
+            //DMG1.text = curTime.toString() + " " +lastTimeUpdated.toString() + " " + timeToUpdate.toString()
+            if(curTime - lastTimeUpdated > timeToUpdate) {
+                doMove()
+                lastTimeUpdated = curTime
+            }
+        }
+        myTimeAnimator.start()
+    }
+
+    private fun doMove() {
+        val myDMG = myPower * 5
+        val docRef = db.collection("battles").document("battle1")
+        if (whichPlayer == 1) {
+            health2 -= myDMG
+            docRef.update("HP2", health2)
+            docRef.update("lastPlayer", player1Name)
+            docRef.update("lastMove", myDMG)
+        } else if (whichPlayer == 2){
+            health1 -= myDMG
+        docRef.update("HP1", health1)
+        docRef.update("lastPlayer", player2Name)
+        docRef.update("lastMove", myDMG)
+        }
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -92,16 +218,23 @@ class BattleFrag(user1: String, user2: String): Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_battle, container, false)
-        val user  = FirebaseAuth.getInstance().currentUser
+        val user = FirebaseAuth.getInstance().currentUser
         if(user == null)
-            Log.d("In Match Making frag", "BAD USER SHOULD NOT BE NULL HERE")
+            Log.d("In HomeFrag", "BAD USER SHOULD NOT BE NULL HERE")
+        val userName = user!!.displayName!!
+        if (userName == player1Name)
+            whichPlayer = 1
+        else if (userName == player2Name)
+            whichPlayer = 2
         db = FirebaseFirestore.getInstance()
         HP1 = root.findViewById<TextView>(R.id.hp_1)
         HP2 = root.findViewById(R.id.hp_2)
         DMG1 = root.findViewById<TextView>(R.id.dmg_1)
         DMG2 = root.findViewById(R.id.dmg_2)
         initViews(root)
-
+        initData()
+        initListener()
+        startGame()
         return root
     }
 
