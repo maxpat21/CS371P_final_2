@@ -15,10 +15,44 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
         android:text="Leaderboard"
-        android:textSize="25dp"
+        android:textSize="28dp"
         android:fontFamily="sans-serif-condensed"
         android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:text="Player"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/LB_username"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:text="BattleBuddy \n Name"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/LB_bbName"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:text="Wins"
+            android:fontFamily="sans-serif-condensed"
+            android:id="@+id/LB_wins"
+            />
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/leaderboardRV"
         android:layout_width="match_parent"
@@ -27,7 +61,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textSize="16sp"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/leaderboard_title"

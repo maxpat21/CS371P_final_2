@@ -27,22 +27,29 @@ import edu.mep3343.battlebuddies.BattleBuddy
 import edu.mep3343.battlebuddies.NewPlayer.SpawnBBFrag
 import java.util.*
 import android.animation.TimeAnimator
+import androidx.lifecycle.ViewModelProviders
+
 
 class BattleFrag(user1: String, user2: String): Fragment() {
 
+    private lateinit var viewModel: MainViewModel
     var lastTimeUpdated = 0.toLong()
     private var whichPlayer: Int = 0
     private lateinit var db: FirebaseFirestore
     private var player1Name = user1
     private var player2Name = user2
+   // private var theBattleDoc = battleDoc
     private var health1: Int = 100
     private var health2: Int = 100
     private var mySpeed: Int = 0
     private var myPower: Int = 0
+    private var BB1thename = ""
+    private var BB2thename = ""
     private lateinit var HP1: TextView
     private lateinit var HP2: TextView
     private lateinit var DMG1: TextView
     private lateinit var DMG2: TextView
+    private lateinit var theAnimator: TimeAnimator
 
 
 
@@ -69,6 +76,7 @@ class BattleFrag(user1: String, user2: String): Fragment() {
                 if(document.exists()) {
                     val myBB = document.toObject(BattleBuddy::class.java)
                     BB_1_name.text = myBB!!.name
+                    BB1thename = myBB!!.name!!
                     BB_1_owner.text = myBB!!.owner
                     val whatType = myBB!!.type
                     if (whatType == "Party Boy")
@@ -109,6 +117,7 @@ class BattleFrag(user1: String, user2: String): Fragment() {
                 if(document.exists()) {
                     val myBB = document.toObject(BattleBuddy::class.java)
                     BB_2_name.text = myBB!!.name
+                    BB2thename = myBB!!.name!!
                     BB_2_owner.text = myBB!!.owner
                     val whatType = myBB!!.type
                     if (whatType == "Party Boy")
@@ -162,22 +171,50 @@ class BattleFrag(user1: String, user2: String): Fragment() {
                 HP2.text = newHP2
                 if(playerMove == player1Name){
                     DMG1.text = dmgDealt
-                    DMG2.text = ""
                 }
                 else if(playerMove == player2Name){
                     DMG2.text = dmgDealt
-                    DMG1.text = ""
                 }
-                if(newHP1.toInt() == 0)
+                if(newHP1.toInt() <= 0)
                     gameOver(player2Name)
-                else if(newHP2.toInt() == 0)
+                else if(newHP2.toInt() <= 0)
                     gameOver(player1Name)
             }
         }
     }
 
     private fun gameOver(winner: String){
-        Toast.makeText(activity, "Game over! Winner is " + winner, Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity!!, "Game over! Winner is " + winner, Toast.LENGTH_SHORT).show()
+        theAnimator.cancel()
+        if(whichPlayer == 1) {
+            val leaderRef = db.collection("leaderboard").document(winner)
+            leaderRef.get()
+                .addOnSuccessListener { document ->
+                    if (document.data == null) {
+                        val forLB = LeaderBoardEntry().apply {
+                            player = winner
+                            if (winner == player1Name)
+                                bbName = BB1thename
+                            else if (winner == player2Name)
+                                bbName == BB2thename
+                            wins = 1
+                        }
+                        db.collection("leaderboard").document(winner).set(forLB)
+                    } else {
+                        val LBEntry = document.toObject(LeaderBoardEntry::class.java)
+                        var newWins = LBEntry!!.wins!!
+                        newWins++
+                        LBEntry.wins = newWins
+                        db.collection("leaderboard").document(winner).set(LBEntry)
+                    }
+                }
+        }
+        val returnFrag = HomeFragment.newInstance()
+        fragmentManager
+            ?.beginTransaction()
+            ?.replace(R.id.main_frame, returnFrag)
+            ?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            ?.commit()
     }
 
 
@@ -192,11 +229,12 @@ class BattleFrag(user1: String, user2: String): Fragment() {
                 lastTimeUpdated = curTime
             }
         }
-        myTimeAnimator.start()
+        theAnimator = myTimeAnimator
+        theAnimator.start()
     }
 
     private fun doMove() {
-        val myDMG = myPower * 5
+        var myDMG = ((myPower*3)..(myPower*5)).random()
         val docRef = db.collection("battles").document("battle1")
         if (whichPlayer == 1) {
             health2 -= myDMG

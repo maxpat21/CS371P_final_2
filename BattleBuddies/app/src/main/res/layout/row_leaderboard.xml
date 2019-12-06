@@ -12,7 +12,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="14dp"
+            android:textSize="16dp"
             android:fontFamily="sans-serif-condensed"
             android:id="@+id/LB_username"
             />
@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="14dp"
+        android:textSize="16dp"
         android:fontFamily="sans-serif-condensed"
         android:id="@+id/LB_bbName"
          />
@@ -28,7 +28,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="14dp"
+        android:textSize="16dp"
         android:fontFamily="sans-serif-condensed"
         android:id="@+id/LB_wins"
         />

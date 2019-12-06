@@ -60,6 +60,8 @@ class LeaderboardFragment : Fragment() {
         viewModel.observeLeaderboard().observe(this, Observer{
             leaderboardAdapter.submitList(it)
         })
+
+        viewModel.getLeaderboard()
         return root
     }
 

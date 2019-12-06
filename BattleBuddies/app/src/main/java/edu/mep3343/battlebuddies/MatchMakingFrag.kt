@@ -59,7 +59,8 @@ class MatchMakingFrag: Fragment() {
                             "Match found!, other player is " + otherPlayerName,
                             Toast.LENGTH_SHORT
                         ).show()
-                        //document.delete()
+                        //docRef.delete()
+                        //val docName = "battle"+(1..10000).random().toString()
                         val battleFrag = BattleFrag.newInstance(otherPlayerName, userName)
                         fragmentManager
                             ?.beginTransaction()
@@ -95,17 +96,17 @@ class MatchMakingFrag: Fragment() {
                 Log.w("MMFrag", "Listen failed.", e)
                 return@addSnapshotListener
             }
-            waitingText.text = "Docref updated"
+            //waitingText.text = "Docref updated"
             if (snapshot != null && snapshot.exists()) {
                 val theData = snapshot.data
                 var playerCount : Int = theData!!["player_count"].toString().toInt()
-                waitingText.text = "Snapshot exists, data is ${theData}"
+                //waitingText.text = "Snapshot exists, data is ${theData}"
                 if(playerCount == 2){
-                    waitingText.text = "2 players in lobby! can start battle!"
+                    //waitingText.text = "2 players in lobby! can start battle!"
                     val otherPlayerName = theData!!["player_2"].toString()
                     Log.d("STARTING BATTLE FRAG", "PLAYER 2 NAME IS " + otherPlayerName)
                     if(otherPlayerName != null && otherPlayerName != "") {
-                        waitingText.text = "Other player is " + otherPlayerName
+                        //waitingText.text = "Other player is " + otherPlayerName
                         val battleFrag = BattleFrag.newInstance(userName, otherPlayerName)
                         fragmentManager
                             ?.beginTransaction()
@@ -115,7 +116,7 @@ class MatchMakingFrag: Fragment() {
                             ?.commit()
                     }
                     else{
-                        waitingText.text = "other player is null"
+                        //waitingText.text = "other player is null"
                     }
                 }
             }
