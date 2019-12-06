@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProviders
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
@@ -16,14 +17,15 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import edu.mep3343.battlebuddies.NewPlayer.ChooseNameFrag
 import edu.mep3343.battlebuddies.NewPlayer.HatchEggFrag
-
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var authAccount: Auth
     private lateinit var chooseNameFrag: ChooseNameFrag
     private lateinit var db: FirebaseFirestore
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         authAccount = Auth(this)
         val user = FirebaseAuth.getInstance().currentUser
+        viewModel = ViewModelProviders.of(this)[MainViewModel::class.java]
+        viewModel.init()
         if(user == null)
             Log.d("BAD", "BAAAAAAAAAAAAAAAAAAAAD")
         else {

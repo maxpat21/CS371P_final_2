@@ -4,24 +4,24 @@
             "outputFile": "C:\\cygwin64\\home\\maxpa\\CS371M\\CS371P_final_2\\BattleBuddies\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lo\\values-lo.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\3653d5c89460569b7cf02e5903ac3cc7\\jetified-play-services-basement-17.0.0\\res\\values-lo\\values.xml",
+                    "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\715cca4343ebb891a03ad22917eb7ca0\\core-1.0.2\\res\\values-lo\\values-lo.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "37",
+                        "startLines": "48",
                         "startColumns": "4",
-                        "startOffsets": "3929",
-                        "endColumns": "190",
-                        "endOffsets": "4115"
+                        "startOffsets": "5579",
+                        "endColumns": "100",
+                        "endOffsets": "5675"
                     }
                 },
                 {
-                    "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\c1bdf704990e457939d92af3ca9b59f6\\appcompat-1.0.2\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\24d3d7f244106b9c0797caf2c0da90a1\\appcompat-1.0.2\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\bb4e4052ab3e29768bd96b4b931a9d1d\\play-services-base-17.1.0\\res\\values-lo\\values.xml",
+                    "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\e845218e8f09b42bea61610273a4b9b9\\jetified-play-services-basement-17.0.0\\res\\values-lo\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "3929",
+                        "endColumns": "190",
+                        "endOffsets": "4115"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\c5beff4117edaecda6d2aa3335a0344c\\play-services-base-17.1.0\\res\\values-lo\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -52,23 +69,6 @@
                         "startOffsets": "2755,2865,3067,3199,3308,3519,3646,3784,4120,4331,4438,4635,4766,4996,5187,5285,5384",
                         "endColumns": "109,201,131,108,210,126,137,144,210,106,196,130,229,190,97,98,113",
                         "endOffsets": "2860,3062,3194,3303,3514,3641,3779,3924,4326,4433,4630,4761,4991,5182,5280,5379,5493"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\maxpa\\.gradle\\caches\\transforms-2\\files-2.1\\953748eb0ea198b15449a22958493b37\\core-1.0.2\\res\\values-lo\\values-lo.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "5579",
-                        "endColumns": "100",
-                        "endOffsets": "5675"
                     }
                 }
             ]

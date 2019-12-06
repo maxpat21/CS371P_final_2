@@ -1147,6 +1147,9 @@ id ALT
 id BB_name
 id CTRL
 id FUNCTION
+id LB_bbName
+id LB_username
+id LB_wins
 id META
 id SHIFT
 id SYM
@@ -1283,7 +1286,9 @@ id italic
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
+id leaderboardRV
 id leaderboard_but
+id leaderboard_title
 id left
 id light
 id line1
@@ -1504,6 +1509,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_hatch
 layout fragment_home
+layout fragment_leaderboard
 layout fragment_name
 layout fragment_spawner
 layout fui_activity_invisible
@@ -1546,6 +1552,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout row_leaderboard
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

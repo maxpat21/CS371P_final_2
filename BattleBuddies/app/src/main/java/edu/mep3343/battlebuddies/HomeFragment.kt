@@ -134,6 +134,19 @@ class HomeFragment: Fragment(){
         docRef.update("lastFed", lastTimeFed)
     }
 
+    private fun initLeaderBoardBut(root: View){
+        val leaderboardBut = root.findViewById<ImageButton>(R.id.leaderboard_but)
+        leaderboardBut.setOnClickListener{
+            val leaderFrag = LeaderboardFragment.newInstance()
+            fragmentManager
+                ?.beginTransaction()
+                ?.add(R.id.main_frame, leaderFrag)
+                ?.addToBackStack(null)
+                ?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                ?.commit()
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -148,6 +161,7 @@ class HomeFragment: Fragment(){
         loadBB(root)
         initSpeedClicks(root)
         initFeedBut(root)
+        initLeaderBoardBut(root)
         return root
     }
 
