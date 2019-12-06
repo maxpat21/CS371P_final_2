@@ -35,6 +35,7 @@ class HomeFragment: Fragment(){
     private  var lastTimeFed: Date ?= null
     private var currentSpeed: Int = 0
     private var currentPower: Int = 0
+    private lateinit var homeBackground: FrameLayout
 
     companion object {
         fun newInstance(): HomeFragment {
@@ -78,7 +79,6 @@ class HomeFragment: Fragment(){
                     Log.d("In Home Frag", "BIG PROBLEM, SOMEHOW IN HOME FRAG BUT THERE IS NO BATTLE BUDDY FOR THIS USER")
                 }
             }
-
     }
 
     private fun initSpeedClicks(root: View){
@@ -147,12 +147,28 @@ class HomeFragment: Fragment(){
         }
     }
 
+    private fun initBattleBut(root: View){
+        val matchMakingBut = root.findViewById<ImageButton>(R.id.battle_but)
+        matchMakingBut.setOnClickListener{
+            val matchMakingFrag = MatchMakingFrag.newInstance()
+            homeBackground.foreground.alpha = 200
+            fragmentManager
+                ?.beginTransaction()
+                ?.add(R.id.popup_box, matchMakingFrag)
+                ?.addToBackStack(null)
+                ?.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                ?.commit()
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_home, container, false)
+        homeBackground = root.findViewById<FrameLayout>(R.id.background_frame_home)
+        homeBackground.foreground.alpha = 0
         val user  = FirebaseAuth.getInstance().currentUser
         if(user == null)
             Log.d("In HomeFrag", "BAD USER SHOULD NOT BE NULL HERE")
@@ -162,6 +178,7 @@ class HomeFragment: Fragment(){
         initSpeedClicks(root)
         initFeedBut(root)
         initLeaderBoardBut(root)
+        initBattleBut(root)
         return root
     }
 

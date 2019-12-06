@@ -1118,6 +1118,8 @@ drawable fui_idp_button_background_phone
 drawable fui_idp_button_background_twitter
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_arrow_downward_black_24dp
+drawable ic_arrow_upward_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
@@ -1144,7 +1146,11 @@ drawable shape_window_dim
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
+id BB_1
+id BB_2
 id BB_name
+id BB_name_1
+id BB_name_2
 id CTRL
 id FUNCTION
 id LB_bbName
@@ -1182,8 +1188,11 @@ id all
 id always
 id anonymous_button
 id async
+id attack_1
+id attack_2
 id auto
 id background_frame
+id background_frame_home
 id barrier
 id battle_but
 id bb_namer
@@ -1236,6 +1245,10 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id dmg_1
+id dmg_1_title
+id dmg_2
+id dmg_2_title
 id dynamic
 id edit_phone_number
 id edit_query
@@ -1274,6 +1287,10 @@ id heading
 id home
 id homeAsUp
 id horizontal
+id hp_1
+id hp_1_title
+id hp_2
+id hp_2_title
 id icon
 id icon_group
 id icon_only
@@ -1299,6 +1316,7 @@ id logo
 id main_frame
 id main_tos_and_pp
 id masked
+id match_making_title
 id media_actions
 id message
 id middle
@@ -1317,6 +1335,8 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id outline
+id owner_1
+id owner_2
 id packed
 id parallax
 id parent
@@ -1330,6 +1350,10 @@ id phone_layout
 id phone_number
 id pin
 id popup_box
+id power_1
+id power_1_title
+id power_2
+id power_2_title
 id power_stat
 id power_text
 id progress_circular
@@ -1379,6 +1403,10 @@ id snapMargins
 id spacer
 id spawned_BB
 id spawner_title
+id speed_1
+id speed_1_title
+id speed_2
+id speed_2_title
 id speed_stat
 id speed_text
 id split_action_bar
@@ -1432,6 +1460,7 @@ id up
 id useLogo
 id view_offset_helper
 id visible
+id waiting_text
 id welcome_back_email_link_body
 id welcome_back_idp_button
 id welcome_back_idp_prompt
@@ -1507,9 +1536,11 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_battle
 layout fragment_hatch
 layout fragment_home
 layout fragment_leaderboard
+layout fragment_match_making
 layout fragment_name
 layout fragment_spawner
 layout fui_activity_invisible

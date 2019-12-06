@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/owner_1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:background="#ff6961"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="15dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/BB_name_1"
+        app:layout_constraintTop_toBottomOf="@+id/owner_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:background="#ff6961"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="15dp"
+        />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/BB_1"
+        app:layout_constraintTop_toBottomOf="@+id/BB_name_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speed_1_title"
+        app:layout_constraintTop_toTopOf="@+id/BB_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/BB_1"
+        android:gravity="center"
+        android:text="Speed: "
+        android:textSize="18dp"
+        android:background="#ff6961"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speed_1"
+        app:layout_constraintTop_toTopOf="@+id/BB_1"
+        app:layout_constraintStart_toEndOf="@+id/speed_1_title"
+        app:layout_constraintBottom_toBottomOf="@+id/BB_1"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/power_1_title"
+        app:layout_constraintTop_toBottomOf="@+id/speed_1_title"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="Power: "
+        android:textSize="18dp"
+        android:background="#ff6961"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/power_1"
+        app:layout_constraintTop_toBottomOf="@+id/speed_1"
+        app:layout_constraintStart_toEndOf="@+id/power_1_title"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hp_1_title"
+        app:layout_constraintTop_toTopOf="@+id/BB_1"
+        app:layout_constraintStart_toEndOf="@+id/BB_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/BB_1"
+        android:gravity="center"
+        android:text="HP"
+        android:textSize="20dp"
+        android:background="#ff6961"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hp_1"
+        app:layout_constraintTop_toBottomOf="@+id/hp_1_title"
+        app:layout_constraintStart_toEndOf="@+id/BB_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:id="@+id/attack_1"
+        app:layout_constraintTop_toBottomOf="@+id/BB_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/attack_2"
+        android:src="@drawable/ic_arrow_downward_black_24dp"
+        android:tint="#ff6961"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dmg_1_title"
+        app:layout_constraintTop_toTopOf="@+id/attack_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/attack_1"
+        app:layout_constraintBottom_toBottomOf="@+id/attack_1"
+        android:gravity="center"
+        android:text="DMG"
+        android:textSize="18dp"
+        android:background="#ff6961"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dmg_1"
+        app:layout_constraintTop_toBottomOf="@+id/dmg_1_title"
+        app:layout_constraintStart_toStartOf="@+id/dmg_1_title"
+        app:layout_constraintEnd_toEndOf="@+id/dmg_1_title"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:id="@+id/attack_2"
+        app:layout_constraintBottom_toTopOf="@+id/BB_2"
+        app:layout_constraintStart_toEndOf="@+id/attack_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_arrow_upward_black_24dp"
+        android:tint="#99badd"
+        android:scaleType="fitXY"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dmg_2_title"
+        app:layout_constraintTop_toTopOf="@+id/attack_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/attack_2"
+        app:layout_constraintBottom_toBottomOf="@+id/attack_2"
+        android:gravity="center"
+        android:text="DMG"
+        android:textSize="18dp"
+        android:background="#99badd"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dmg_2"
+        app:layout_constraintTop_toBottomOf="@+id/dmg_2_title"
+        app:layout_constraintStart_toStartOf="@+id/dmg_2_title"
+        app:layout_constraintEnd_toEndOf="@+id/dmg_2_title"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/BB_2"
+        app:layout_constraintBottom_toTopOf="@+id/BB_name_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hp_2_title"
+        app:layout_constraintTop_toTopOf="@+id/BB_2"
+        app:layout_constraintEnd_toStartOf="@+id/BB_2"
+        app:layout_constraintBottom_toBottomOf="@+id/BB_2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:text="HP"
+        android:textSize="20dp"
+        android:background="#99badd"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hp_2"
+        app:layout_constraintTop_toBottomOf="@+id/hp_2_title"
+        app:layout_constraintEnd_toStartOf="@+id/BB_2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speed_2_title"
+        app:layout_constraintTop_toTopOf="@+id/BB_2"
+        app:layout_constraintStart_toEndOf="@id/BB_2"
+        app:layout_constraintBottom_toBottomOf="@+id/BB_2"
+        android:gravity="center"
+        android:text="Speed: "
+        android:textSize="18dp"
+        android:background="#99badd"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/speed_2"
+        app:layout_constraintTop_toTopOf="@+id/BB_2"
+        app:layout_constraintStart_toEndOf="@+id/speed_2_title"
+        app:layout_constraintBottom_toBottomOf="@+id/BB_2"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/power_2_title"
+        app:layout_constraintTop_toBottomOf="@+id/speed_2_title"
+        app:layout_constraintStart_toEndOf="@+id/BB_2"
+        android:gravity="center"
+        android:text="Power: "
+        android:textSize="18dp"
+        android:background="#99badd"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/power_2"
+        app:layout_constraintTop_toBottomOf="@+id/speed_2"
+        app:layout_constraintStart_toEndOf="@+id/power_2_title"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-condensed"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/BB_name_2"
+        app:layout_constraintBottom_toTopOf="@+id/owner_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:background="#99badd"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginBottom="15dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/owner_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:background="#99badd"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginBottom="15dp"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
